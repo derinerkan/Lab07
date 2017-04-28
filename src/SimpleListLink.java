@@ -5,15 +5,15 @@
  */
 public class SimpleListLink
 {
-    Object toStore;
-    SimpleListLink prev; //previous object
-    SimpleListLink next;
+    private String toStore;
+    private SimpleListLink prev; //previous object
+    private SimpleListLink next;
 
     /**
      * Constructs a SimpleListLink with no other linked elements
      * @param x the Object to store
      */
-    public SimpleListLink(Object x)
+    public SimpleListLink(String x)
     {
         toStore = x;
         prev = null;
@@ -25,11 +25,70 @@ public class SimpleListLink
      * @param prev the link before it
      * @param x the Object to store
      */
-    public SimpleListLink(SimpleListLink prev, Object x)
+    public SimpleListLink(SimpleListLink prev, String x)
     {
         this(x);
         this.prev = prev;
     }
 
-    public SimpleListLink(SimpleListLink prev, Object x, SimpleListLink next)
+    public SimpleListLink(SimpleListLink prev, String x, SimpleListLink next)
+    {
+        this(prev, x);
+        this.next = next;
+    }
+
+    /**
+     * Sets the next element of a SimpleLinkedList
+     * @param next the element to set
+     */
+    public void setNext(SimpleListLink next)
+    {
+        this.next = next;
+    }
+
+    /**
+     * Gets the next SimpleListLink in line
+     * @return the next SimpleListLink
+     */
+    public SimpleListLink getNext()
+    {
+        return next;
+    }
+
+    /**
+     * Sets the previous SimpleListLink
+     * @param prev the new link to set
+     */
+    public void setPrev(SimpleListLink prev)
+    {
+        this.prev = prev;
+    }
+
+    /**
+     * Gets the previous link in order
+     * @return the link
+     */
+    public SimpleListLink getPrev()
+    {
+        return prev;
+    }
+
+    /**
+     * Sets the data to be stored
+     * @param s a string that this link will contain
+     */
+    public void storeData(String s)
+    {
+        this.toStore = s;
+    }
+
+    /**
+     * Returns the stored String
+     * @return the String in storage
+     */
+    public String getData()
+    {
+        return toStore;
+    }
+
 }
