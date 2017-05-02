@@ -5,7 +5,7 @@
  */
 public class SimpleListLink
 {
-    Object toStore;
+    String toStore;
     SimpleListLink prev; //previous object
     SimpleListLink next;
 
@@ -13,7 +13,7 @@ public class SimpleListLink
      * Constructs a SimpleListLink with no other linked elements
      * @param x the Object to store
      */
-    public SimpleListLink(Object x)
+    public SimpleListLink(String x)
     {
         toStore = x;
         prev = null;
@@ -25,11 +25,23 @@ public class SimpleListLink
      * @param prev the link before it
      * @param x the Object to store
      */
-    public SimpleListLink(SimpleListLink prev, Object x)
+    public SimpleListLink(SimpleListLink prev, String x)
     {
         this(x);
         this.prev = prev;
     }
 
-    public SimpleListLink(SimpleListLink prev, Object x, SimpleListLink next)
+    /**
+     * Constructs a SimpleListLink that has both a previous linked element and a next linked element
+     * @param prev
+     * @param x
+     * @param next
+     */
+    public SimpleListLink(SimpleListLink prev, String x, SimpleListLink next)
+    {
+        this(prev, x);
+        this.next = next;
+    }
+
+    public void
 }
