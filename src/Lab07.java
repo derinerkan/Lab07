@@ -15,6 +15,8 @@ public class Lab07
         }
         System.out.println(list);
 
+        for(int i=0; i<255; i++) System.out.println(list.get(i));
 
+        while(!list.isEmpty()) System.out.println(list.removeFromHead());
     }
 }

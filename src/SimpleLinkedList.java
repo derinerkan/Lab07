@@ -34,7 +34,8 @@ public class SimpleLinkedList
     public String removeFromHead()
     {
         String temp = first.data;
-        first = first.next;
+        if(first.next != null) first = first.next;
+        else first = null;
         return temp;
     }
 
@@ -54,7 +55,11 @@ public class SimpleLinkedList
      */
     public String get( int index)
     {
-        return first.get(index);
+        //return first.get(index);
+
+        Node current = first;
+        for(int i=0; i<index; i++) current = current.next;
+        return current.data;
     }
 
     /**
