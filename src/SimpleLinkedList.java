@@ -1,25 +1,74 @@
 /**
  * SimpleLinkedList for Lab07
  * @author Derin Erkan
- * @version 2017-04-28
+ * @version 2017-05-02
  */
 public class SimpleLinkedList
 {
-    private SimpleLinkedList next;
-    private SimpleLinkedList prev;
-    private String toStore;
+    Node first;
+
     /**
-     * Constructs a new SimpleLinkedList
+     * Construct an empty SimpleLinkedList with no elements within.
      */
-    public SimpleLinkedList();
+    public SimpleLinkedList()
+    {
+        first = null;
+    }
 
-    public void addToHead( String item);
+    /**
+     * Adds the string to the beginning of the list
+     * @param item the string to be added
+     */
+    public void addToHead( String item)
+    {
+        Node temp = new Node(item);
+        temp.next = first;
+        first = temp;
+        first.updateIndex();
+    }
 
-    public String removeFromHead();
+    /**
+     * Removes the string at the beginning and returns it
+     * @return the string at position zero
+     */
+    public String removeFromHead()
+    {
+        String temp = first.data;
+        if(first.next != null) first = first.next;
+        else first = null;
+        return temp;
+    }
 
-    public boolean isEmpty();
+    /**
+     * Check if this list is empty.
+     * @return true if it is empty
+     */
+    public boolean isEmpty()
+    {
+        return first == null;
+    }
 
-    public String get( int index);
+    /**
+     * Gets the item at that index
+     * @param index the index to check
+     * @return the item there
+     */
+    public String get( int index)
+    {
+        //return first.get(index);
 
-    public String toString();
+        Node current = first;
+        for(int i=0; i<index; i++) current = current.next;
+        return current.data;
+    }
+
+    /**
+     * Returns a string representation of the entire list
+     * @return the string
+     */
+    public String toString()
+    {
+        return first.toString();
+    }
+
 }
