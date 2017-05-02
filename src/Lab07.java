@@ -1,5 +1,3 @@
-
-
 /**
  * Lab07 main class
  * @author Derin Erkan
@@ -9,6 +7,14 @@ public class Lab07
 {
     public static void main(String[] args)
     {
+        //Testing SimpleLinkedList
         SimpleLinkedList list = new SimpleLinkedList();
+        for(int i=0; i<255; i++)
+        {
+            list.addToHead(Integer.toHexString(i));
+        }
+        System.out.println(list);
+
+
     }
 }
